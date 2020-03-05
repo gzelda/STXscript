@@ -2,16 +2,6 @@ import subprocess
 
 f = open('redpocket.txt')
 
-'''
-line = f.readline()
-for i in line:
-    if i=="\n":
-        print("n")
-    elif i=="\t":
-        print("t")
-    elif i==" ":
-        print("space")
-'''
 count = 0
 data = []
 def isSpecial(i):
@@ -25,11 +15,22 @@ while True:
     if not line:
         break
     else:
-        print("new:",count)
+        #print("new:",count)
         curLine=line.strip().split("\t")
         data.append(curLine)
-        print(curLine)
+        #print(curLine)
 
     count = count + 1
 
-print(data)
+#print(data)
+
+for item in data:
+    #print(item)
+    amount = item[0]
+    address = item[1]
+    memo = ""
+    if len(item) == 3:
+        memo =  item[2]
+    print(amount,address,memo)
+    cmd = "blockstack-cli balance " +address
+    subprocess.call(cmd, shell=True)
