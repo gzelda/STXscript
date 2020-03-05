@@ -1,7 +1,7 @@
 import subprocess
 
-f = open('redpocket.txt')
-f2 = open('log.txt', 'w')
+f = open('data1to10.txt')
+f2 = open('log1to10.txt', 'w')
 count = 0
 data = []
 def isSpecial(i):
@@ -29,18 +29,26 @@ for item in data:
     amount = item[0]
     address = item[1]
     memo = ""
+    #print(amount,address,memo)
+    #cmd = "blockstack-cli balance " +address
+    cmd = "blockstack-cli send_tokens " + address +" STACKS " #+ "$prikey $prikey"
+    amountf = float(amount)
+    amountf = int(amountf * 1000000)
+    #print(amountf,type(amountf))
+    cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" "
     if len(item) == 3:
         memo =  item[2]
-    #print(amount,address,memo)
-    cmd = "blockstack-cli balance " +address
+        cmd = cmd + memo
+    print("commond is:" ,cmd)
     t =  subprocess.call(cmd, shell=True)
-    if t == 1 :
-        print(count,item)
-    f2.write(str(count)+":"+str(item)+":"+str(t)+"\n")
+    #if t == 1 :
+    #    print(count,item)
+    f2.write(str(count)+":"+str(cmd)+":"+str(t)+":"+str(item)+"\n")
     count = count + 1
     #print("t is:",t)
 
 #t = subprocess.call("blockstack-cli balance 1234",shell=True)
 #print("t is:",t)
+#subprocess.call("echo $GTY",shell=True)
 f.close()
 f2.close()
