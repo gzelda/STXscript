@@ -1,7 +1,7 @@
 import subprocess
 
-f = open('data1to10.txt')
-f2 = open('log1to10.txt', 'w')
+f = open('data51toend.txt')
+f2 = open('log51toend.txt', 'w')
 count = 0
 data = []
 def isSpecial(i):
@@ -45,6 +45,8 @@ for item in data:
     #    print(count,item)
     f2.write(str(count)+":"+str(cmd)+":"+str(t)+":"+str(item)+"\n")
     count = count + 1
+    if count % 24 == 0:
+        sleep(660)
     #print("t is:",t)
 
 #t = subprocess.call("blockstack-cli balance 1234",shell=True)
