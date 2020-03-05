@@ -1,7 +1,8 @@
 import subprocess
+import time
 
-f = open('data1to10.txt')
-f2 = open('log1to10.txt', 'w')
+f = open('data11to50.txt')
+f2 = open('log11to50.txt', 'w')
 count = 0
 data = []
 def isSpecial(i):
@@ -41,6 +42,7 @@ for item in data:
         cmd = cmd + memo
     print("commond is:" ,cmd)
     t =  subprocess.call(cmd, shell=True)
+    time.sleep(2)
     #if t == 1 :
     #    print(count,item)
     f2.write(str(count)+":"+str(cmd)+":"+str(t)+":"+str(item)+"\n")
