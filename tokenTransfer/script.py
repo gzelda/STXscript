@@ -1,8 +1,8 @@
 import subprocess
 import time
 
-f = open('dataleft3-6.txt')
-f2 = open('logdataleft3-6.txt', 'w')
+f = open('dataleft3-6screen.txt')
+f2 = open('logdataleft3-6screen.txt', 'w')
 
 count = 0
 data = []
@@ -24,6 +24,8 @@ while True:
 
     count = count + 1
 
+
+time.sleep(1200)
 #print(data)
 count = 0
 for item in data:
