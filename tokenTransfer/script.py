@@ -1,8 +1,8 @@
 import subprocess
 import time
 
-f = open('data3-6screen2.txt')
-f2 = open('logdata3-6screen2.txt', 'w')
+f = open('data3-6screen3.txt')
+f2 = open('logdata3-6screen3.txt', 'w')
 
 count = 0
 data = []
