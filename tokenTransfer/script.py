@@ -1,8 +1,8 @@
 import subprocess
 import time
 
-f = open('data51toend.txt')
-f2 = open('log51toendtimesleep.txt', 'w')
+f = open('dataleft3-6.txt')
+f2 = open('logdataleft3-6.txt', 'w')
 
 count = 0
 data = []
@@ -26,7 +26,6 @@ while True:
 
 #print(data)
 count = 0
-time.sleep(660)
 for item in data:
     #print(item)
     amount = item[0]
@@ -50,7 +49,7 @@ for item in data:
     f2.write(str(count)+":"+str(cmd)+":"+str(t)+":"+str(item)+"\n")
     count = count + 1
     if count % 24 == 0:
-        time.sleep(660)
+        time.sleep(1200)
     #print("t is:",t)
 
 #t = subprocess.call("blockstack-cli balance 1234",shell=True)
