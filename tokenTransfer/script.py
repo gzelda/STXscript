@@ -25,7 +25,6 @@ while True:
     count = count + 1
 
 
-time.sleep(1200)
 #print(data)
 count = 0
 for item in data:
@@ -45,7 +44,7 @@ for item in data:
         cmd = cmd + memo
     print("commond is:" ,cmd)
     t =  subprocess.call(cmd, shell=True)
-    time.sleep(2)
+    time.sleep(3)
     #if t == 1 :
     #    print(count,item)
     f2.write(str(count)+":"+str(cmd)+":"+str(t)+":"+str(item)+"\n")
