@@ -1,8 +1,9 @@
 import subprocess
 import time
 
-f = open('data11to50.txt')
-f2 = open('log11to50.txt', 'w')
+f = open('data51toend.txt')
+f2 = open('log51toendtimesleep.txt', 'w')
+
 count = 0
 data = []
 def isSpecial(i):
@@ -25,6 +26,7 @@ while True:
 
 #print(data)
 count = 0
+time.sleep(660)
 for item in data:
     #print(item)
     amount = item[0]
@@ -47,6 +49,8 @@ for item in data:
     #    print(count,item)
     f2.write(str(count)+":"+str(cmd)+":"+str(t)+":"+str(item)+"\n")
     count = count + 1
+    if count % 24 == 0:
+        time.sleep(660)
     #print("t is:",t)
 
 #t = subprocess.call("blockstack-cli balance 1234",shell=True)
