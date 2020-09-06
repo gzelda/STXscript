@@ -27,7 +27,7 @@ while True:
 print(data, count)
 count = 0
 
-for i in range(10):
+for i in range(100):
     #print(item)
     amount = data[i][1]
     address = data[i][0]
@@ -37,9 +37,14 @@ for i in range(10):
     amountf = float(amount)
     amountf = int(amountf * 1000000)
     print(amountf,type(amountf))
-    cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" "
+    cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" " + " -F 8"
     print("commond is:" ,cmd)
-    time.sleep(5)
+    
+    t =  subprocess.call(cmd, shell=True)
+    f2.write(str(count)+":"+str(cmd)+":"+str(t)+":"+"\n")
+    time.sleep(20)
+    if count % 30 == 0:
+        time.sleep(1800)
     '''
     cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" "
     print("commond is:" ,cmd)
