@@ -1,0 +1,1 @@
+10:blockstack-cli send_tokens SPYWEJEKR92YFXYDBJE1YCTPT2WY4V506713CE9B STACKS 9000000 "$prikey" "$prikey"  -F 6:0

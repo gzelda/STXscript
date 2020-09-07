@@ -1,0 +1,8 @@
+0:blockstack-cli send_tokens SPZG09ZGCVKZYFTCA94E5K81KACKTPFV8RFC6SK4 STACKS 9000000 "$prikey" "$prikey"  -F 6:0:
+0:blockstack-cli send_tokens SPZCX4J80HH87N2ANHP52CEK1Q2THRA77ZW2FX9E STACKS 9000000 "$prikey" "$prikey"  -F 6:0:
+0:blockstack-cli send_tokens SPZBBSSN1KTDH2XF9XGHHZCR71H2CJ442QGYB9EJ STACKS 9000000 "$prikey" "$prikey"  -F 6:0:
+0:blockstack-cli send_tokens SPZ66NZBEP5P307N53PN28NVWHMHY7SPA4KVHBE1 STACKS 9000000 "$prikey" "$prikey"  -F 6:0:
+0:blockstack-cli send_tokens SPZ4R8K3B8X597HMBGWZTBABA9HRD52FSESN9FPK STACKS 9000000 "$prikey" "$prikey"  -F 6:0:
+0:blockstack-cli send_tokens SPZ3VMYZ4CJV3ADFD0VXT6H7Y1PCCWJ3ZDQGY8FV STACKS 9000000 "$prikey" "$prikey"  -F 6:0:
+0:blockstack-cli send_tokens SPZ3K34ZY21T8FE46XBP9CBRNA4H13TZ2FYTCFQH STACKS 9000000 "$prikey" "$prikey"  -F 6:0:
+0:blockstack-cli send_tokens SPZ1GAB3BJKM5VZN2ZMZGFNJ2FXEPN4Z90JGD3NG STACKS 9000000 "$prikey" "$prikey"  -F 6:0:

@@ -2,7 +2,7 @@ import subprocess
 import time
 
 f = open('./data/STX_address.txt')
-f2 = open('log.txt', 'w')
+f2 = open('log318-count.txt', 'w')
 
 count = 0
 data = []
@@ -24,10 +24,11 @@ while True:
     count = count + 1
 
 
-print(data, count)
-count = 0
+#print(data, count)
 
-for i in range(100):
+
+
+for i in range(318, count):
     #print(item)
     amount = data[i][1]
     address = data[i][0]
@@ -37,14 +38,14 @@ for i in range(100):
     amountf = float(amount)
     amountf = int(amountf * 1000000)
     print(amountf,type(amountf))
-    cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" " + " -F 8"
+    cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" " + " -F 6"
     print("commond is:" ,cmd)
     
     t =  subprocess.call(cmd, shell=True)
-    f2.write(str(count)+":"+str(cmd)+":"+str(t)+":"+"\n")
+    f2.write(str(i)+":"+str(cmd)+":"+str(t)+"\n")
     time.sleep(20)
-    if count % 30 == 0:
-        time.sleep(1800)
+    if i % 24 == 0:
+        time.sleep(1200)
     '''
     cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" "
     print("commond is:" ,cmd)
