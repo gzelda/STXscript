@@ -2,7 +2,7 @@ import subprocess
 import time
 
 f = open('./data/STX_address_2.txt')
-f2 = open('l1-l128.txt', 'w')
+f2 = open('l2-l126.txt', 'w')
 
 count = 0
 data = []
@@ -28,7 +28,7 @@ while True:
 
 
 
-for i in range(126):
+for i in range(2, 126):
     #print(item)
     amount = data[i][1]
     address = data[i][0]
@@ -45,7 +45,7 @@ for i in range(126):
     f2.write(str(i)+":"+str(cmd)+":"+str(t)+"\n")
     time.sleep(20)
     if i % 20 == 0:
-        time.sleep(1200)
+        time.sleep(1800)
 
 #t = subprocess.call("blockstack-cli balance 1234",shell=True)
 #print("t is:",t)
