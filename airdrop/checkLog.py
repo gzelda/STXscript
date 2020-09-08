@@ -1,9 +1,9 @@
 import subprocess
 import time
 
-f0 = open('log69-500.txt')
-f1 = open('log318-count.txt')
-f2 = open('./data/STX_address_2.txt', 'w')
+#f0 = open('log69-500.txt')
+f1 = open('l2-l126.txt')
+f2 = open('./data/STX_address_3.txt', 'w')
 
 count = 0
 data = []
@@ -13,16 +13,16 @@ def isSpecial(i):
     else:
         return False
 
-while True:
-    line = f0.readline()
-    if not line:
-        break
-    else:
-        #print("new:",count)
-        curLine=line.strip().split(" ")
-        data.append(curLine)
-        #print(curLine)
-    count = count + 1
+#while True:
+#    line = f0.readline()
+#    if not line:
+#        break
+#    else:
+#        #print("new:",count)
+#        curLine=line.strip().split(" ")
+#        data.append(curLine)
+#        #print(curLine)
+#    count = count + 1
 
 while True:
     line = f1.readline()
