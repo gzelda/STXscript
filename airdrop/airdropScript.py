@@ -1,8 +1,8 @@
 import subprocess
 import time
 
-f = open('./data/STX_address_2.txt')
-f2 = open('l2-l126.txt', 'w')
+f = open('./data/STX_address_3.txt')
+f2 = open('l1-l35.txt', 'w')
 
 count = 0
 data = []
@@ -28,7 +28,7 @@ while True:
 
 
 
-for i in range(2, 126):
+for i in range(2, 35):
     #print(item)
     amount = data[i][1]
     address = data[i][0]
