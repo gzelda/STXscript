@@ -1,8 +1,8 @@
 import subprocess
 import time
 
-f = open('./data/STX_address_3.txt')
-f2 = open('l1-l35.txt', 'w')
+f = open('./data/STX_address_201118.txt')
+f2 = open('201118-1.txt', 'w')
 
 count = 0
 data = []
@@ -18,27 +18,35 @@ while True:
         break
     else:
         #print("new:",count)
-        curLine=line.strip().split(" ")
+        curLine=line.strip().split("\t")
         data.append(curLine)
         #print(curLine)
     count = count + 1
 
 
-#print(data, count)
+print(data, count)
 
 
 
-for i in range(2, 35):
+for i in range(0, 27):
     #print(item)
     amount = data[i][1]
     address = data[i][0]
-    print(amount, address)
+    memo = ""
+    print(amount, address, memo)
 
-    cmd = "blockstack-cli send_tokens " + address +" STACKS " #+ "$prikey $prikey"
+    cmd = "blockstack-cli-Gavin send_tokens " + address +" STACKS " #+ "$prikey $prikey"
     amountf = float(amount)
     amountf = int(amountf * 1000000)
     print(amountf,type(amountf))
-    cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" " + " -F 6"
+    cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" " 
+
+    if len(data[i]) == 3:
+        memo =  data[i][2]
+        cmd = cmd + memo
+
+    cmd = cmd + " -F 6"
+
     print("commond is:" ,cmd)
     
     t =  subprocess.call(cmd, shell=True)
