@@ -1,7 +1,7 @@
 import subprocess
 import time
 
-f = open('./data/STX_address_201118.txt')
+f = open('./data/STX_address.txt')
 f2 = open('201118-1.txt', 'w')
 
 count = 0
@@ -28,36 +28,19 @@ print(data, count)
 
 
 
-for i in range(0, 27):
+count = 10
+cmd = "npx stx-bulk-transfer "
+for i in range(0, count):
     #print(item)
     amount = data[i][1]
     address = data[i][0]
     memo = ""
     print(amount, address, memo)
+    #npx stx-bulk-transfer STADMRP577SC3MCNP7T3PRSTZBJ75FJ59JGABZTW,100 ST2WPFYAW85A0YK9ACJR8JGWPM19VWYF90J8P5ZTH,50 -k my_private_key -n testnet -b
 
-    cmd = "blockstack-cli-Gavin send_tokens " + address +" STACKS " #+ "$prikey $prikey"
-    amountf = float(amount)
-    amountf = int(amountf * 1000000)
-    print(amountf,type(amountf))
-    cmd = cmd + str(amountf) + " \"$prikey\" \"$prikey\" " 
 
-    if len(data[i]) == 3:
-        memo =  data[i][2]
-        cmd = cmd + memo
+t =  subprocess.call(cmd, shell=True)
 
-    cmd = cmd + " -F 6"
-
-    print("commond is:" ,cmd)
-    
-    t =  subprocess.call(cmd, shell=True)
-    f2.write(str(i)+":"+str(cmd)+":"+str(t)+"\n")
-    time.sleep(20)
-    if i % 20 == 0:
-        time.sleep(1800)
-
-#t = subprocess.call("blockstack-cli balance 1234",shell=True)
-#print("t is:",t)
-#subprocess.call("echo $GTY",shell=True)
 
 f.close()
 f2.close()
