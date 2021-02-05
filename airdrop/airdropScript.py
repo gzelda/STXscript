@@ -1,7 +1,7 @@
 import subprocess
 import time
 
-f = open('./data/STX_address.txt')
+f = open('./data/testAirdrop.txt')
 f2 = open('201118-1.txt', 'w')
 
 count = 0
@@ -28,16 +28,21 @@ print(data, count)
 
 
 
-count = 10
-cmd = "npx stx-bulk-transfer "
-for i in range(0, count):
+count = 2
+#cmd = "stx-bulk-transfer STADMRP577SC3MCNP7T3PRSTZBJ75FJ59JGABZTW,100 -k $pri_key -n mainnet"
+cmd = "stx-bulk-transfer "
+for i in range(2):
     #print(item)
-    amount = data[i][1]
-    address = data[i][0]
-    memo = ""
-    print(amount, address, memo)
+    amount = data[i][0]
+    address = data[i][1]
+    #print(address, amount)
+    
+    #cmd = cmd + address + ',' + amount + ' '
+    cmd = cmd + address + ',' + str(int(amount)*1000000) + ' '
     #npx stx-bulk-transfer STADMRP577SC3MCNP7T3PRSTZBJ75FJ59JGABZTW,100 ST2WPFYAW85A0YK9ACJR8JGWPM19VWYF90J8P5ZTH,50 -k my_private_key -n testnet -b
+cmd = cmd + "-k $pri_key -n mainnet"
 
+print(cmd)
 
 t =  subprocess.call(cmd, shell=True)
 
